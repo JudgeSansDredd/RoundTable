@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: roundtableuser
+      POSTGRES_PASSWORD: roundtablepassword
+      POSTGRES_DB: roundtabledb
+    ports:
+      - "5432:5432"
+    networks:
+      - roundtable-network
+
+networks:
+  roundtable-network:
+    name: roundtable-network
+    external: false
